@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Violin Practice</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header id="bar">
+  <div class="row">
+    <select id="pieceSel" aria-label="Piece"></select>
+    <button data-jump="-5" title="Back 5 s">&minus;5s</button>
+    <button data-jump="-1" title="Back 1 s">&minus;1s</button>
+    <button id="play" title="Play / pause (Space)">&#9654;</button>
+    <button data-jump="1" title="Forward 1 s">+1s</button>
+    <button data-jump="5" title="Forward 5 s">+5s</button>
+    <input id="slider" type="range" min="0" max="100" step="0.01" value="0" aria-label="Position">
+    <span id="time">0:00.0 / 0:00.0</span>
+  </div>
+  <div class="row">
+    <span class="grp">Speed
+      <button data-rate="0.5">50%</button>
+      <button data-rate="0.6">60%</button>
+      <button data-rate="0.7">70%</button>
+      <button data-rate="0.8">80%</button>
+      <button data-rate="0.9">90%</button>
+      <button data-rate="1">100%</button>
+    </span>
+    <label><input type="checkbox" id="loop" checked> Loop</label>
+    <label>Gap
+      <select id="gap"><option value="0">0 s</option><option value="1">1 s</option><option value="2">2 s</option><option value="3">3 s</option></select>
+    </label>
+    <label><input type="checkbox" id="follow" checked> Follow</label>
+    <span id="occWrap" class="grp" hidden>Start at
+      <select id="occ"></select>
+    </span>
+    <button id="clear" title="Clear selection (Esc)">Clear selection</button>
+    <span id="status"></span>
+  </div>
+</header>
+
+<div id="notice" hidden></div>
+<main id="sheet"></main>
+<audio id="audio" preload="auto"></audio>
+
+<script src="pieces/index.js"></script>
+<script src="js/common.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
